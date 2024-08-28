@@ -1,6 +1,9 @@
-/*
-Programa principal de nuestro mayor proyecto: una galeria de tiro automatizada controlada por arduino y android
-Realizado por Víctor Caro Pastor y Alba Navarro Moreno, estudiantes de 1º Bachicherato B en el IES ZOCO
+/** Encabezado:
+ * @file main.ino
+ * @brief Programa principal de la galeria de tiro automatizada controlada por arduino y android
+ * @author [Victor Caro Pastor](https://github.com/Vicaro1)
+ * @version  V2.1
+ * @date  07-07-2016
 */
 
 #include <LiquidCrystal.h> //libreria para la lcd
@@ -36,7 +39,11 @@ int zumbacorazon=2; // apodo para el zumbador de los corazones, pin digital 2
 
 LiquidCrystal lcd(7,8,9,10,11,12); // establecemos los pines de la lcd todos ellos pines digitales
 
-void setup() // esto lo hara al comienzo de cada "partida" solo una vez
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SETUP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+// Esto lo hara al comienzo de cada "partida" solo una vez
+void setup() 
 {
  Serial.begin(9600); // iniciamos la comunicacion serial para el bluetooth y el movil
 
@@ -56,7 +63,11 @@ void setup() // esto lo hara al comienzo de cada "partida" solo una vez
  lcd.clear(); // borramos la pantalla
 }
 
- void loop() // lo que repetira una y otra vez
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ LOOP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+// lo que repetira una y otra vez
+void loop() 
 {
 int ntotal=n1+n2+n3+n4+n7+n6; // creamos una variable que es la suma de los puntos de las ldrs
 
