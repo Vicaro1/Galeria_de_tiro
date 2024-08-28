@@ -33,56 +33,44 @@ void setup()
 // lo que repetira una y otra vez
 void loop() 
 {
-
-  if(Serial.available()>0) // nos aseguramos que el puerto serial esta habilitado y tiene una variable minimo
-  {
-  estado=Serial.read(); // la valor de la variable estado sera la lectura serial  
-  }
+ if(Serial.available()>0) // nos aseguramos que el puerto serial esta habilitado y tiene una variable minimo
+ {
+ estado=Serial.read(); // la valor de la variable estado sera la lectura serial  
+ }
   
  if(estado=='1') // si estado igual a 1 (encender) entonces...
  {
    if (lado ==0)
    {
     for (x=0; x<180; x+=4) // para un angulo igual a 40º y menor a 180º, suma 5º
-     {
-       angulo1 = map (x, 0, 180, 150, 60); // equivalencias para el servo y los angulos
-       angulo2 = map (x, 0, 180, 55, 155); // equivalencias para el servo y los angulos
-     
-       servo1.write(angulo1);  // posicionamos el servo1 
-       servo2.write(angulo2);  // posicionamos el servo2     
-               
-       delay(100);
-         }
-     lado = 1;
+    {
+     angulo1 = map (x, 0, 180, 150, 60); // equivalencias para el servo y los angulos
+     angulo2 = map (x, 0, 180, 55, 155); // equivalencias para el servo y los angulos
+     servo1.write(angulo1);  // posicionamos el servo1 
+     servo2.write(angulo2);  // posicionamos el servo2      
+     delay(100);
+    }
+    lado = 1;
    }
    if (lado ==1)
    {
     for (x=0; x<180; x+=4) // para un angulo igual a 40º y menor a 180º, suma 5º
-     {
-       angulo2 = map (x, 0, 180, 150, 60); // equivalencias para el servo y los angulos
-       angulo1 = map (x, 0, 180, 55, 155); // equivalencias para el servo y los angulos
-     
-       servo1.write(angulo1);  // posicionamos el servo1 
-       servo2.write(angulo2);  // posicionamos el servo2     
-               
-       delay(100);
-         }
-     lado = 0;
-   }
+    {
+     angulo2 = map (x, 0, 180, 150, 60); // equivalencias para el servo y los angulos
+     angulo1 = map (x, 0, 180, 55, 155); // equivalencias para el servo y los angulos
+     servo1.write(angulo1);  // posicionamos el servo1 
+     servo2.write(angulo2);  // posicionamos el servo2             
+     delay(100);
+    }
+    lado = 0;
+  }
 }
  if(estado=='2') // si estado igual a 2 (apagar) entonces...
  {  
   angulo1 = 98;
   angulo2 = 100;
   servo1.write(angulo1);  // posicionamos el servo1 
-  servo2.write(angulo2);  // posicionamos el servo2     
-           
+  servo2.write(angulo2);  // posicionamos el servo2           
   delay(100);  
  }
 }
-
-  
-  
-
-
-
