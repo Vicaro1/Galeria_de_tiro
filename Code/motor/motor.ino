@@ -1,5 +1,5 @@
 /** Encabezado:
- * @file main.ino
+ * @file motor.ino
  * @brief Programa del motor superior de la galeria de tiro automatizada controlada por arduino y android
  * @author [Victor Caro Pastor](https://github.com/Vicaro1)
  * @version  V2.1
